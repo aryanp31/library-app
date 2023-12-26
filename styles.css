@@ -1,0 +1,39 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 1rem;
+  background-color: #434242;
+  color: #d8d8d8;
+}
+
+.fa-github {
+  font-size: 24px;
+  color: #d8d8d8;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: scale(1.1);
+}
