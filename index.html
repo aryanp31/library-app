@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Library</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/4fd03a0270.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Title -->
@@ -12,25 +13,39 @@
 
   <!-- Add Book -->
   <div id="add-book-container">
-    <button id="add-book-btn">+ Add Book</button>
+    <button class="btn" id="add-book-btn">+ Add Book</button>
   </div>
 
   <!-- Add Book Form -->
-  <div id="add-book-form-container">
-    <form id="add-book-form" action="script.js">
-      <div id="book-input-container">
-        <p><input type="text" id="title" name="title" placeholder="Title"></p>
-        <p><input type="text" id="author" name="author" placeholder="Author"></p>
+  <div class="add-book-form-container">
+    <form class="add-book-form" action="/script.js">
+      <div class="book-input-container">
+        <p><input class="input" type="text" id="title" name="title" placeholder="Title" required></p>
+        <p><input class="input" type="text" id="author" name="author" placeholder="Author" required></p>
       </div>
       <div id="book-checkbox-container">
-        <p><label>Read? </label><input type="checkbox" id="read" name="read" value="yes"></p>
+        <p><label>Read? </label><input class="input" type="checkbox" id="read" name="read" value="yes"></p>
       </div>
-      <button id="book-submit" type="submit" form="form">Add Book</button>
+      <input class="input" type="submit" id="book-submit">Add Book</button>
     </form>
   </div>
 
   <!-- Library -->
-  <div id='library-container'></div>
+  <main>
+    <div class="library-container"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      aryanp31
+    </p>
+    <a href="https://github.com/aryanp31" target="_blank"><i class="fab fa-github"></i></a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
