@@ -7,7 +7,31 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Title -->
   <h1>Your Library</h1>
-</body>
+
+  <!-- Add Book -->
+  <div id="add-book-container">
+    <button id="add-book-btn">+ Add Book</button>
+  </div>
+
+  <!-- Add Book Form -->
+  <div id="add-book-form-container">
+    <form id="add-book-form" action="script.js">
+      <div id="book-input-container">
+        <p><input type="text" id="title" name="title" placeholder="Title"></p>
+        <p><input type="text" id="author" name="author" placeholder="Author"></p>
+      </div>
+      <div id="book-checkbox-container">
+        <p><label>Read? </label><input type="checkbox" id="read" name="read" value="yes"></p>
+      </div>
+      <button id="book-submit" type="submit" form="form">Add Book</button>
+    </form>
+  </div>
+
+  <!-- Library -->
+  <div id='library-container'></div>
+
   <script src="script.js"></script>
+</body>
 </html>
