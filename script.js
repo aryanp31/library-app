@@ -24,9 +24,9 @@ let userLibrary = [];
 function addBookToLibrary() {
   openForm.style.display = "none";
 
-  const title = document.getElementById("title");
-  const author = document.getElementById("author");
-  const read = document.getElementById("read");
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const read = document.getElementById("read").checked;
 
   const newBook = new Book(title, author, read);
   userLibrary.push(newBook);
@@ -111,6 +111,7 @@ function setData() {
 }
 
 function restore() {
+  openForm.style.display = 'none';
   if (!localStorage.userLibrary) {
       render();
   } else {
