@@ -12,7 +12,7 @@ const submitBtn = document.getElementById('submit-btn');
 submitBtn.addEventListener('click', addBookToLibrary);
 
 class Book {
-  constructor(title="NA", author="NA", read) {
+  constructor(title="NA", author="NA", read=false) {
     this.title = title;
     this.author = author;
     this.read = read;
@@ -40,6 +40,12 @@ function addBookToLibrary() {
   openForm.reset();
 }
 
+function removeBookFromLibrary(index) {
+  userLibrary.splice(index, 1);
+  setData();
+  render();
+}
+
 function render() {
   const display = document.querySelector(".library-container");
   const books = document.querySelectorAll(".book");
@@ -48,12 +54,6 @@ function render() {
   for (let i = 0; i < userLibrary.length; i++) {
     createBook(userLibrary[i]);
   }
-}
-
-function removeBookFromLibrary(index) {
-  userLibrary.splice(index, 1);
-  setData();
-  render();
 }
 
 function createBook(book) {
@@ -65,7 +65,7 @@ function createBook(book) {
   const removeBtn = document.createElement("button");
 
   bookDiv.classList.add("book");
-  bookDiv.setAttribute("id", userLibrary.indexOf("book"));
+  bookDiv.setAttribute("id", `book-${userLibrary.indexOf(book)}`);
 
   titleDiv.textContent = book.title;
   titleDiv.classList.add("title");
@@ -91,10 +91,17 @@ function createBook(book) {
     render();
   })
 
-  removeBtn.textContent = 'Remove'; 
-  removeBtn.setAttribute('id', 'removeBtn');
+  removeBtn.textContent = "Remove"; 
+  removeBtn.setAttribute("id", "removeBtn");
+  removeBtn.setAttribute("data-index", userLibrary.indexOf(book));
   bookDiv.appendChild(removeBtn);
-  removeBtn.addEventListener('click', () => removeBookFromLibrary(userLibrary.indexOf(book)));
+
+  library.addEventListener("click", (event) => {
+    if (event.target.id === 'removeBtn') {
+      const index = parseInt(event.target.dataset.index);
+      removeBookFromLibrary(index);
+    }
+  });
 
   library.appendChild(bookDiv);
 }
@@ -107,7 +114,7 @@ function restore() {
   if (!localStorage.userLibrary) {
       render();
   } else {
-      let objects = localStorage.getItem('userLibrary') // gets information from local storage to use in below loop to create DOM/display
+      let objects = localStorage.getItem('userLibrary');
       objects = JSON.parse(objects);
       userLibrary = objects;
       render();
