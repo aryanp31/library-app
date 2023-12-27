@@ -6,6 +6,7 @@
   <title>Your Library</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/4fd03a0270.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Title -->
@@ -17,16 +18,15 @@
   </div>
 
   <!-- Add Book Form -->
-  <div class="add-book-form-container">
-    <form class="add-book-form" action="/script.js">
-      <div class="book-input-container">
-        <p><input class="input" type="text" id="title" name="title" placeholder="Title" required></p>
-        <p><input class="input" type="text" id="author" name="author" placeholder="Author" required></p>
+  <div class="book-form-container">
+    <form id="book-form">
+      <span class="close">&times;</span>
+      <div id="book-form-inputs">
+        <p><input class="input" type="text" id="title" placeholder="Title" required></p>
+        <p><input class="input" type="text" id="author" placeholder="Author" required></p>
+        <p>Read? <input class="input" type="checkbox" id="read"></p>
       </div>
-      <div id="book-checkbox-container">
-        <p><label>Read? </label><input class="input" type="checkbox" id="read" name="read" value="yes"></p>
-      </div>
-      <input class="input" type="submit" id="book-submit">Add Book</button>
+      <button class="btn" type="submit" form="form" id="submit-btn">Add</button>
     </form>
   </div>
 
@@ -40,7 +40,5 @@
     <p class="footer-text">Copyright © <script>document.write(new Date().getFullYear())</script> aryan patel</p>
     <a href="https://github.com/aryanp31" target="_blank"><i class="fab fa-github"></i></a>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
