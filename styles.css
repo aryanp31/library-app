@@ -12,12 +12,36 @@ html {
   min-height: 100%;
 }
 
+/* STYLING */
 body {
   background-color: gray;
 }
 
-/* FOOTER */
+h1 {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed red;
+}
 
+.add-book-container {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed red;
+}
+
+.book-form-container {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed red;
+}
+
+/* FOOTER */
 .footer {
   position: absolute;
   bottom: 0;
