@@ -12,6 +12,10 @@ html {
   min-height: 100%;
 }
 
+body {
+  background-color: gray;
+}
+
 /* FOOTER */
 
 .footer {
