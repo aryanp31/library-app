@@ -1,2 +1,2 @@
 # library-app
-A Library App
+A Library App to store books you are currently reading!
