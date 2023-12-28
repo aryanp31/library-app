@@ -96,11 +96,8 @@ function createBook(book) {
   removeBtn.setAttribute("data-index", userLibrary.indexOf(book));
   bookDiv.appendChild(removeBtn);
 
-  library.addEventListener("click", (event) => {
-    if (event.target.id === 'removeBtn') {
-      const index = parseInt(event.target.dataset.index);
-      removeBookFromLibrary(index);
-    }
+  removeBtn.addEventListener("click", () => {
+      removeBookFromLibrary(userLibrary.indexOf(book));
   });
 
   library.appendChild(bookDiv);
